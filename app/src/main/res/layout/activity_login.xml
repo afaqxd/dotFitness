@@ -54,7 +54,7 @@
         app:layout_constraintVertical_bias="0.02">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edt_login_username"
+            android:id="@+id/edt_login_email"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
             app:counterEnabled="true"
             app:helperTextTextColor="@color/red"
             android:layout_marginTop="10dp"
-            android:hint="Username">
+            android:hint="Email">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
