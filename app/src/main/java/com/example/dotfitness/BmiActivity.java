@@ -50,6 +50,7 @@ public class BmiActivity extends AppCompatActivity {
             public void onClick(View v) {
                 height.setText("");
                 weight.setText("");
+                height.requestFocus();
             }
         });
 

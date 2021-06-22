@@ -58,9 +58,6 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:helperText="Required*"
-            app:helperTextEnabled="true"
-            app:helperTextTextColor="@color/red"
             android:layout_marginTop="10dp"
             android:hint="Full Name">
 

@@ -19,32 +19,62 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                app:cardBackgroundColor="@color/black"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/black"
                 app:cardCornerRadius="40dp">
 
-                <LinearLayout
+                <RelativeLayout
+                    android:id="@+id/layout_topCard"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="20dp"
-                    android:background="@drawable/bmi_gradient">
+                    android:background="@drawable/bmi_gradient"
+                    android:padding="20dp">
 
                     <ImageView
+                        android:id="@+id/img_userAvatar"
                         android:layout_width="82dp"
                         android:layout_height="82dp"
                         android:src="@drawable/img_personavatar" />
 
-                     <TextView
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:text="My Dashboard"
-                         android:textColor="@color/white"
-                         android:textSize="25sp"
-                         android:layout_marginLeft="20dp"
-                         android:fontFamily="@font/calm"
-                         />
-                </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv_main_dashboard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/img_userAvatar"
+                        android:fontFamily="@font/calm"
+                        android:text="My Dashboard"
+                        android:textColor="@color/white"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/tv_main_Welcome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_main_dashboard"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/img_userAvatar"
+                        android:text="Welcome"
+                        android:textColor="@color/white"
+                        android:textSize="25sp"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tv_main_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_main_dashboard"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@id/tv_main_Welcome"
+                        android:fontFamily="@font/sweet_chilli"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+
+                        />
+
+                </RelativeLayout>
+
 
             </androidx.cardview.widget.CardView>
 

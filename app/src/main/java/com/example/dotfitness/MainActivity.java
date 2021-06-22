@@ -1,17 +1,18 @@
 package com.example.dotfitness;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
+
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     LinearLayout act_bmi, act_exercises;
+    TextView text_DisplayName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         act_bmi = findViewById(R.id.lay_bmi);
         act_exercises = findViewById(R.id.lay_exercises);
+        text_DisplayName = findViewById(R.id.tv_main_user);
+
+        Intent intent1 = getIntent();
+        String UserName = intent1.getStringExtra("name1");
+        text_DisplayName.setText(UserName);
 
         act_exercises.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
         act_bmi.setOnClickListener(new View.OnClickListener() {
             @Override

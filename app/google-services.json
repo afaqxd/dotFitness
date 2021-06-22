@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "200790279632",
+    "project_id": "dotfitness-6cc28",
+    "storage_bucket": "dotfitness-6cc28.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200790279632:android:a1ea80ed9d65e5499425d5",
+        "android_client_info": {
+          "package_name": "com.example.dotfitness"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200790279632-a5jge66s98op9mr834dqeu13mshjc3fb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1rizINIn6yNwivmv-4QZEo8a4i521RBs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200790279632-a5jge66s98op9mr834dqeu13mshjc3fb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

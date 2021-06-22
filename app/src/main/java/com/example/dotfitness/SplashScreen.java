@@ -8,12 +8,7 @@ import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 
-import com.github.ybq.android.spinkit.sprite.Sprite;
-import com.github.ybq.android.spinkit.style.Circle;
-import com.github.ybq.android.spinkit.style.FadingCircle;
-import com.github.ybq.android.spinkit.style.WanderingCubes;
 
 import java.util.Random;
 import java.util.Spliterator;
@@ -36,11 +31,6 @@ public class SplashScreen extends AppCompatActivity {
         fitness.startAnimation(anim01);
         anim02 = AnimationUtils.loadAnimation(SplashScreen.this,R.anim.anim_scale);
         dot.startAnimation(anim02);
-
-        ProgressBar progressBar = (ProgressBar)findViewById(R.id.progress_bar);
-        Sprite doubleBounce = new FadingCircle();
-        progressBar.setIndeterminateDrawable(doubleBounce);
-
 
 
         new Handler().postDelayed(new Runnable() {
