@@ -15,14 +15,15 @@
         <activity android:name=".SignupActivity"></activity>
         <activity android:name=".BmiActivity" />
         <activity android:name=".ExercisesActivity">
+
+
+        </activity>
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-        </activity>
-        <activity android:name=".SplashScreen">
 
         </activity>
         <activity android:name=".MainActivity" />

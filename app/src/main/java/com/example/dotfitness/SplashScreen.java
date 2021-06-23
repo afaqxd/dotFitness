@@ -15,8 +15,8 @@ import java.util.Spliterator;
 
 public class SplashScreen extends AppCompatActivity {
 
-    Animation anim01,anim02;
-    ImageView dot,fitness;
+    Animation anim01,anim02,anim03;
+    ImageView dot,fitness,loading;
 
 
     @Override
@@ -26,11 +26,14 @@ public class SplashScreen extends AppCompatActivity {
 
         dot = findViewById(R.id.img_dot);
         fitness = findViewById(R.id.img_fitness);
+        loading = findViewById(R.id.img_heart);
 
         anim01 = AnimationUtils.loadAnimation(SplashScreen.this, R.anim.slide_right);
         fitness.startAnimation(anim01);
         anim02 = AnimationUtils.loadAnimation(SplashScreen.this,R.anim.anim_scale);
         dot.startAnimation(anim02);
+        anim03 = AnimationUtils.loadAnimation(SplashScreen.this,R.anim.rotate_heart);
+        loading.startAnimation(anim03);
 
 
         new Handler().postDelayed(new Runnable() {

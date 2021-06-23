@@ -70,7 +70,6 @@ public class TimerActivity extends AppCompatActivity {
             }
         });
         updateTimer();
-
     }
 
     private void startStop() {
@@ -86,6 +85,8 @@ public class TimerActivity extends AppCompatActivity {
         countDownTimer = new CountDownTimer(timeLeftInMilliseconds, 1000) {
             @Override
             public void onTick(long l) {
+                final MediaPlayer mp1 = MediaPlayer.create(TimerActivity.this, R.raw.sound_tick);
+                mp1.start();
                 timeLeftInMilliseconds = l;
                 updateTimer();
 
@@ -98,14 +99,14 @@ public class TimerActivity extends AppCompatActivity {
         }.start();
         timerStart.setText("PAUSE");
         timerRunning = true;
-
     }
 
     private void updateTimer() {
+
         int seconds = (int) timeLeftInMilliseconds / 1000;
         String timeLeftText;
         timeLeftText = "00" + ":";
-       // if (seconds < 10) timeLeftText += "0";
+        if (seconds < 10) timeLeftText += "0";
         timeLeftText += seconds;
         text_timer.setText(timeLeftText);
 
