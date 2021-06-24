@@ -5,11 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,10 +21,9 @@ public class LoginActivity extends AppCompatActivity {
 
     TextInputLayout text_username_login;
     TextInputLayout text_password_login;
-
-
     TextView text_newuser_signup;
     Button btn_login;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +32,11 @@ public class LoginActivity extends AppCompatActivity {
 
         text_username_login = findViewById(R.id.edt_login_username);
         text_password_login = findViewById(R.id.edt_login_password);
-
         text_newuser_signup = findViewById(R.id.tv_desc_signup);
         btn_login = findViewById(R.id.btn_login);
+
+
+        LoadingDialog loadingDialog = new LoadingDialog(LoginActivity.this);
 
         text_newuser_signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,8 +56,19 @@ public class LoginActivity extends AppCompatActivity {
                     validateUser();
                 }
 
+                loadingDialog.startDialog();
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        loadingDialog.stopDialog();
+                    }
+                },3000);
+
             }
         });
+
+
     }
 
     private void validateUser() {
@@ -85,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
 
-                        intent.putExtra("name1",nameFromDB);
+                        intent.putExtra("name1", nameFromDB);
                         startActivity(intent);
 
                     } else {

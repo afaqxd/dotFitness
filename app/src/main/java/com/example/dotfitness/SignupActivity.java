@@ -90,7 +90,7 @@ public class SignupActivity extends AppCompatActivity {
 
     private Boolean validateUsername() {
         String val = text_username.getEditText().getText().toString();
-        String noWhiteSpace = "\\A\\w{4,20}\\z";
+        String noWhiteSpace = "\\A\\w{2,20}\\z";
 
 
         if (val.isEmpty()) {
