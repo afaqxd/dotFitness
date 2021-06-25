@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    LinearLayout act_bmi, act_exercises;
+    LinearLayout act_bmi, act_exercises,act_medTimer;
     TextView text_DisplayName;
 
     @Override
@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         act_bmi = findViewById(R.id.lay_bmi);
         act_exercises = findViewById(R.id.lay_exercises);
+        act_medTimer = findViewById(R.id.lay_medTimer);
         text_DisplayName = findViewById(R.id.tv_main_user);
 
         Intent intent1 = getIntent();
@@ -30,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ExercisesActivity.class);
+                startActivity(intent);
+            }
+        });
+        act_medTimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MeditationTimerActivity.class);
                 startActivity(intent);
             }
         });
