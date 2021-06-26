@@ -36,6 +36,7 @@
                         android:id="@+id/img_userAvatar"
                         android:layout_width="82dp"
                         android:layout_height="82dp"
+                        android:elevation="6dp"
                         android:src="@drawable/img_personavatar" />
 
                     <TextView
@@ -45,6 +46,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_toRightOf="@id/img_userAvatar"
                         android:fontFamily="@font/calm"
+                        android:elevation="20dp"
                         android:text="My Dashboard"
                         android:textColor="@color/white"
                         android:textSize="25sp" />
@@ -57,6 +59,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_toRightOf="@id/img_userAvatar"
                         android:text="Welcome"
+                        android:elevation="20dp"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         android:textStyle="italic" />

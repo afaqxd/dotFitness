@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    LinearLayout act_bmi, act_exercises,act_medTimer;
+    LinearLayout act_bmi, act_exercises, act_medTimer, act_diets;
     TextView text_DisplayName;
 
     @Override
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         act_bmi = findViewById(R.id.lay_bmi);
         act_exercises = findViewById(R.id.lay_exercises);
         act_medTimer = findViewById(R.id.lay_medTimer);
+        act_diets = findViewById(R.id.lay_diet);
         text_DisplayName = findViewById(R.id.tv_main_user);
 
         Intent intent1 = getIntent();
@@ -46,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, BmiActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        act_diets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ShowDietPlansActivity.class);
                 startActivity(intent);
             }
         });

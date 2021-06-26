@@ -30,14 +30,14 @@ public class ExercisesActivity extends AppCompatActivity implements RecyclerView
         setContentView(R.layout.activity_exercises);
 
         recyclerView = findViewById(R.id.recyclerview1);
-        ExercisesList.add(new Exercises("1.", "Arm Raises"));
-        ExercisesList.add(new Exercises("2.", "Triceps Dips"));
-        ExercisesList.add(new Exercises("3.", "Diamond Pushups"));
-        ExercisesList.add(new Exercises("4.", "Jumping Jacks"));
-        ExercisesList.add(new Exercises("5.", "Diagonal Plank"));
-        ExercisesList.add(new Exercises("6.", "Burpees"));
-        ExercisesList.add(new Exercises("7.", "Arm Scissors"));
-        ExercisesList.add(new Exercises("8.", "Shoulder Gators"));
+        ExercisesList.add(new Exercises("1.", "ARM RAISES"));
+        ExercisesList.add(new Exercises("2.", "TRICEPS DIPS"));
+        ExercisesList.add(new Exercises("3.", "DIAMOND PUSHUPS"));
+        ExercisesList.add(new Exercises("4.", "JUMPING JACKS"));
+        ExercisesList.add(new Exercises("5.", "DIAGONAL PLANK"));
+        ExercisesList.add(new Exercises("6.", "BURPEES"));
+        ExercisesList.add(new Exercises("7.", "ARM SCISSORS"));
+        ExercisesList.add(new Exercises("8.", "SHOULDER GATORS"));
 
         recyclerViewAdapter = new RecyclerViewAdapter(ExercisesList, ExercisesActivity.this,this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
