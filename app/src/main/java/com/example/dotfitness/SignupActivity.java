@@ -132,7 +132,10 @@ public class SignupActivity extends AppCompatActivity {
         if (val.isEmpty()) {
             text_password.setError("Field cannot be empty");
             return false;
-        } else {
+        } else if (val.length() > 7 ) {
+            text_password.setError("Password too long");
+            return false;
+        }else {
             text_password.setError(null);
             text_password.setErrorEnabled(false);
             return true;

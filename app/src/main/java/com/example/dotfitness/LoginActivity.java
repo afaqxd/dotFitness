@@ -55,7 +55,6 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     validateUser();
                 }
-
                 loadingDialog.startDialog();
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
@@ -64,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                         loadingDialog.stopDialog();
                     }
                 },3000);
+
 
             }
         });
@@ -146,6 +146,7 @@ public class LoginActivity extends AppCompatActivity {
             text_password_login.setErrorEnabled(false);
             return true;
         }
+
     }
 
 
