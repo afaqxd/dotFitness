@@ -23,6 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Let's Meditate"
+            android:textStyle="bold"
             android:textSize="30sp" />
 
 
@@ -30,7 +31,7 @@
             android:id="@+id/tv_med_timer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="100dp"
             android:gravity=""
             android:text="00:00"
             android:textSize="50sp" />
@@ -52,6 +53,25 @@
             android:text="Reset"
             android:textColor="@color/black" />
 
+
+        <TextView
+            android:id="@+id/tv_reasons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reasons for meditating"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="70sp"/>
+
+        <TextView
+            android:id="@+id/tv_reasonDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Understanding your pain\n2. Lower your stress\n3. Connect better\n4. Improve focus\n5. Reduce brain chatter"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10sp"/>
 
 
     </LinearLayout>

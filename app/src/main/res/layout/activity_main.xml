@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_background"
     tools:context=".MainActivity">
 
 
@@ -19,7 +20,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_marginHorizontal="10dp"
+                android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 app:cardElevation="10dp"
                 app:cardBackgroundColor="@color/black"
@@ -55,28 +56,25 @@
                         android:id="@+id/tv_main_Welcome"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tv_main_dashboard"
-                        android:layout_marginLeft="20dp"
-                        android:layout_toRightOf="@id/img_userAvatar"
+                        android:layout_below="@id/img_userAvatar"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
                         android:text="Welcome"
-                        android:elevation="20dp"
                         android:textColor="@color/white"
-                        android:textSize="20sp"
-                        android:textStyle="italic" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/tv_main_user"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tv_main_dashboard"
                         android:layout_marginLeft="5dp"
                         android:gravity="center"
+                        android:layout_below="@id/img_userAvatar"
+                        android:layout_marginTop="10dp"
+                        android:textStyle="italic"
                         android:layout_toRightOf="@id/tv_main_Welcome"
-                        android:fontFamily="@font/sweet_chilli"
                         android:textColor="@color/white"
-                        android:textSize="20dp"
-
-                        />
+                        android:textSize="20dp" />
 
                 </RelativeLayout>
 
@@ -87,7 +85,7 @@
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
+                android:layout_marginHorizontal="0dp"
                 android:layout_marginTop="10dp"
                 android:alignmentMode="alignMargins"
                 android:columnCount="2"
@@ -258,7 +256,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
-                            android:text="Meditation Timer"
+                            android:text="Meditation"
                             android:gravity="center"
                             android:textSize="18sp" />
 
@@ -266,6 +264,7 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
 
                 <androidx.cardview.widget.CardView
 
@@ -278,8 +277,9 @@
                     app:cardElevation="10dp">
 
                     <LinearLayout
+                        android:id="@+id/lay_signout"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:gravity="center"
                         android:orientation="vertical"
                         android:padding="16dp">
@@ -287,19 +287,20 @@
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/img_diet" />
+                            android:src="@drawable/img_signout" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_marginTop="10dp"
-                            android:text="Diets"
+                            android:text="Signout"
+                            android:gravity="center"
                             android:textSize="18sp" />
 
 
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
 
 
             </GridLayout>

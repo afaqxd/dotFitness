@@ -1,6 +1,8 @@
 package com.example.dotfitness;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -91,6 +93,10 @@ public class MeditationTimerActivity extends AppCompatActivity {
     private void updateCountDown() {
         int minutes = (int) ((timeLeftInMilliseconds / 1000) / 60); // casting because timeleft is in long
         int seconds = (int) ((timeLeftInMilliseconds / 1000) % 60);
+        if(seconds<10){
+            final MediaPlayer mp1 = MediaPlayer.create(MeditationTimerActivity.this, R.raw.sound_tick);
+            mp1.start();
+        }
         String timeFormat = String.format(Locale.getDefault(),"%02d:%02d",minutes,seconds);
         text_timer.setText(timeFormat);
     }

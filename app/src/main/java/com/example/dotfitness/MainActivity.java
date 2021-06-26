@@ -11,7 +11,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    LinearLayout act_bmi, act_exercises, act_medTimer, act_diets;
+    LinearLayout act_bmi, act_exercises, act_medTimer, act_diets,act_wallpapers;
+    LinearLayout act_signout;
     TextView text_DisplayName;
 
     @Override
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         act_exercises = findViewById(R.id.lay_exercises);
         act_medTimer = findViewById(R.id.lay_medTimer);
         act_diets = findViewById(R.id.lay_diet);
+        act_wallpapers = findViewById(R.id.lay_wallpapers);
+        act_signout = findViewById(R.id.lay_signout);
         text_DisplayName = findViewById(R.id.tv_main_user);
 
         Intent intent1 = getIntent();
@@ -51,10 +54,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        act_wallpapers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, WallpapersActivity.class);
+                startActivity(intent);
+            }
+        });
+
         act_diets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ShowDietPlansActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        act_signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
