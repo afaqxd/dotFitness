@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent1 = getIntent();
         String UserName = intent1.getStringExtra("name1");
 
-        text_DisplayName.setText(sh1.getString("N",""));
+        text_DisplayName.setText(String.valueOf(sh1.getString("N","")));
 
         act_exercises.setOnClickListener(new View.OnClickListener() {
             @Override
