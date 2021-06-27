@@ -120,6 +120,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        intent.putExtra("name1",nameFromDB);
                         startActivity(intent);
 
                     } else {

@@ -70,17 +70,17 @@ public class MainActivity extends AppCompatActivity {
         anim07 = AnimationUtils.loadAnimation(MainActivity.this, R.anim.slide_top_to_bottom);
         cardDASHBOARD.startAnimation(anim07);
 
-
-
-
         sh1 = getSharedPreferences("DATA",MODE_PRIVATE);
         editor1 = sh1.edit();
+
 
 
         Intent intent1 = getIntent();
         String UserName = intent1.getStringExtra("name1");
 
         text_DisplayName.setText(String.valueOf(sh1.getString("N","")));
+        text_DisplayName.setText(UserName);
+
 
         act_exercises.setOnClickListener(new View.OnClickListener() {
             @Override
