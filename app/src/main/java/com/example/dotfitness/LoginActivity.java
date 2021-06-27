@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
@@ -23,7 +25,10 @@ public class LoginActivity extends AppCompatActivity {
     TextInputLayout text_password_login;
     TextView text_newuser_signup;
     Button btn_login;
-
+    CheckBox checkbox;
+    boolean alreadySignedIn;
+    SharedPreferences sh;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +39,13 @@ public class LoginActivity extends AppCompatActivity {
         text_password_login = findViewById(R.id.edt_login_password);
         text_newuser_signup = findViewById(R.id.tv_desc_signup);
         btn_login = findViewById(R.id.btn_login);
+        checkbox = findViewById(R.id.checkbox_remember);
+        sh = getSharedPreferences("DATA",MODE_PRIVATE);
+        editor = sh.edit();
 
+        text_username_login.getEditText().setText(sh.getString("N",""));
+        text_password_login.getEditText().setText(sh.getString("P",""));
+        alreadySignedIn = sh.getBoolean("IsLoggedIn",false);
 
         LoadingDialog loadingDialog = new LoadingDialog(LoginActivity.this);
 
@@ -45,6 +56,11 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        if(alreadySignedIn){
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        }
+
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +90,7 @@ public class LoginActivity extends AppCompatActivity {
     private void validateUser() {
         String user_enteredUsername = text_username_login.getEditText().getText().toString().trim();
         String user_enteredPassword = text_password_login.getEditText().getText().toString().trim();
+
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Courses");
 
         Query checkUser = reference.orderByChild("username").equalTo(user_enteredUsername);
@@ -85,7 +102,6 @@ public class LoginActivity extends AppCompatActivity {
 
                     text_username_login.setError(null);
                     text_username_login.setErrorEnabled(false);
-
                     String passwordFromDB = snapshot.child(user_enteredUsername).child("password").getValue(String.class);
 
                     if (passwordFromDB.equals(user_enteredPassword)) {
@@ -94,9 +110,16 @@ public class LoginActivity extends AppCompatActivity {
                         text_username_login.setError(null);
                         text_username_login.setErrorEnabled(false);
 
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
 
-                        intent.putExtra("name1", nameFromDB);
+                        if(checkbox.isChecked()){
+                            editor.putString("N",user_enteredUsername);
+                            editor.putString("P",user_enteredPassword);
+                            editor.putBoolean("IsLoggedIn",true);
+                            editor.apply();
+                        }
+
+
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
 
                     } else {

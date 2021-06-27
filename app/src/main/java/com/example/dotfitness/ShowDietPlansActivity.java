@@ -3,6 +3,7 @@ package com.example.dotfitness;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -24,6 +25,8 @@ public class ShowDietPlansActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ShowDietPlansActivity.this, WeightGainActivity.class);
                 startActivity(intent);
+                final MediaPlayer mp1 = MediaPlayer.create(ShowDietPlansActivity.this, R.raw.voice_gainweight);
+                mp1.start();
             }
         });
         act_weightLoss.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +34,8 @@ public class ShowDietPlansActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ShowDietPlansActivity.this, WeightLossActivity.class);
                 startActivity(intent);
+                final MediaPlayer mp1 = MediaPlayer.create(ShowDietPlansActivity.this, R.raw.voice_loseweight);
+                mp1.start();
             }
         });
 

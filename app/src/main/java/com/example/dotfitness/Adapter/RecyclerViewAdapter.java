@@ -2,6 +2,7 @@ package com.example.dotfitness.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +55,33 @@ public class RecyclerViewAdapter extends  RecyclerView.Adapter<RecyclerViewAdapt
                 intent.putExtra("exerNumber",position);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
+
+                if(position==0){
+                    final MediaPlayer mp1 = MediaPlayer.create(context, R.raw.armraises);
+                    mp1.start();
+                }if(position==1){
+                    final MediaPlayer mp1 = MediaPlayer.create(context, R.raw.tricepsdips);
+                    mp1.start();
+                }if(position==2){
+                    final MediaPlayer mp1 = MediaPlayer.create(context, R.raw.diamondpushups);
+                    mp1.start();
+                }if(position==3){
+                    final MediaPlayer mp1 = MediaPlayer.create(context, R.raw.jumpingjacks);
+                    mp1.start();
+                }if(position==4){
+                    final MediaPlayer mp1 = MediaPlayer.create(context, R.raw.diagonalplank);
+                    mp1.start();
+                }if(position==5){
+                    final MediaPlayer mp1 = MediaPlayer.create(context, R.raw.burpees);
+                    mp1.start();
+                }if(position==6){
+                    final MediaPlayer mp1 = MediaPlayer.create(context, R.raw.armscissors);
+                    mp1.start();
+                }if(position==7){
+                    final MediaPlayer mp1 = MediaPlayer.create(context, R.raw.shouldergators);
+                    mp1.start();
+                }
+
             }
         });
 

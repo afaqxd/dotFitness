@@ -25,10 +25,10 @@
         android:id="@+id/tv_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/jump_and_play"
         android:text="WELCOME BACK"
         android:textSize="40sp"
-        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toTopOf="@+id/tv_label"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/animationView"
@@ -37,11 +37,11 @@
     <TextView
         android:id="@+id/tv_label"
         android:layout_width="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_welcome"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_height="wrap_content"
         android:text="Login to continue"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_welcome" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -58,13 +58,13 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Username"
+            app:counterEnabled="true"
+            app:counterMaxLength="10"
             app:helperText="Required*"
             app:helperTextEnabled="true"
-            app:counterMaxLength="10"
-            app:counterEnabled="true"
-            app:helperTextTextColor="@color/red"
-            android:layout_marginTop="10dp"
-            android:hint="Username">
+            app:helperTextTextColor="@color/red">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -78,14 +78,14 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Password"
+            app:counterEnabled="true"
+            app:counterMaxLength="7"
             app:helperText="Required*"
             app:helperTextEnabled="true"
-            app:counterMaxLength="7"
-            app:counterEnabled="true"
             app:helperTextTextColor="@color/red"
-            app:passwordToggleEnabled="true"
-            android:layout_marginTop="10dp"
-            android:hint="Password">
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -94,6 +94,13 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <CheckBox
+            android:id="@+id/checkbox_remember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Remember Me" />
+
         <Button
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
@@ -101,8 +108,7 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/round_button"
             android:text="login"
-            android:textSize="20dp"
-            />
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/tv_desc_signup"
@@ -111,11 +117,11 @@
             android:layout_gravity="right"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="15dp"
-            android:text="CREATE ACCOUNT!"
-            android:textStyle="italic"
-            android:textColor="@color/blue"
             android:layout_marginRight="10dp"
-            android:textSize="15sp" />
+            android:text="CREATE ACCOUNT!"
+            android:textColor="@color/blue"
+            android:textSize="15sp"
+            android:textStyle="italic" />
 
     </LinearLayout>
 
